@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyonto Rozario - Resume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --bg-color: #F8FAFC;
+            --primary: #3B82F6;
+            --accent: #F59E0B;
+            --secondary: #A78BFA;
+            --text-main: #1E293B;
+            --white: #FFFFFF;
+            --divider: #E2E8F0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #E2E8F0;
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* A4 Page Setup */
+        .page {
+            width: 210mm;
+            height: 297mm;
+            background-color: var(--bg-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            padding: 35px 40px 25px;
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        header h2 {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--secondary);
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 12px;
+            color: var(--text-main);
+            flex-wrap: wrap;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Layout */
+        .content {
+            display: flex;
+            flex: 1;
+        }
+
+        /* Left Column */
+        .left-col {
+            width: 38%;
+            background-color: var(--white);
+            padding: 30px;
+            border-right: 1px solid var(--divider);
+        }
+
+        /* Right Column */
+        .right-col {
+            width: 62%;
+            padding: 30px;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--divider);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Typography & Elements */
+        p.profile-text {
+            font-size: 11.5px;
+            line-height: 1.6;
+            color: var(--text-main);
+            text-align: justify;
+        }
+
+        .skill-group {
+            margin-bottom: 15px;
+        }
+
+        .skill-group h4 {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11.5px;
+            margin-bottom: 6px;
+        }
+
+        .skill-level {
+            color: var(--secondary);
+            font-size: 10px;
+            font-weight: 500;
+            background: rgba(167, 139, 250, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .tools-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tool-tag {
+            background-color: var(--bg-color);
+            border: 1px solid var(--divider);
+            color: var(--text-main);
+            font-size: 10.5px;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        /* Right Column Specifics */
+        .experience-item {
+            margin-bottom: 18px;
+            background: var(--white);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .experience-item h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-main);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .experience-item .company {
+            font-size: 12px;
+            color: var(--secondary);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .experience-item ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .experience-item ul li {
+            font-size: 11.5px;
+            line-height: 1.5;
+            margin-bottom: 4px;
+            position: relative;
+            padding-left: 12px;
+        }
+
+        .experience-item ul li::before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .highlight-badge {
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .education-item {
+            margin-bottom: 10px;
+        }
+        
+        .education-item h3 {
+            font-size: 13px;
+            color: var(--text-main);
+        }
+
+        .education-item p {
+            font-size: 11.5px;
+            color: var(--secondary);
+        }
+
+        .mini-text {
+            font-size: 11.5px;
+            margin-bottom: 4px;
+        }
+
+        /* Print Settings */
+        @media print {
+            body { padding: 0; background-color: var(--bg-color); }
+            .page { box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <header>
+            <h1>Joyonto Rozario</h1>
+            <h2>UI/UX Designer | Graphic Designer | Digital Marketing & Frontend Enthusiast</h2>
+            <div class="contact-info">
+                <span>📍 Bangladesh</span>
+                <span>✉ joyonto.design@email.com</span> <span>📱 +880 1234 567 890</span> <span>🔗 Behance: /joyontorozario</span>
+                <span>🌐 Website: joyonto.design</span>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="left-col">
+                
+                <div class="section">
+                    <div class="section-title">✦ Profile Summary</div>
+                    <p class="profile-text">
+                        Creative UI/UX Designer with 2.5+ years of experience in designing user-centered digital products and real-world applications with large-scale users. Skilled in visual design, branding, frontend basics (HTML, CSS, Bootstrap), and digital marketing strategies including SEO, Meta Ads, and Google Ads. Founder of a licensed e-commerce brand, combining creativity, technology, and business thinking. Passionate about advancing in graphic design and visual communication.
+                    </p>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">✦ Key Skills</div>
+                    <div class="skill-group">
+                        <div class="skill-item"><span>UI/UX Design</span> <span class="skill-level">Advanced</span></div>
+                        <div class="skill-item"><span>Graphic Design</span> <span class="skill-level">Advanced</span></div>
+                        <div class="skill-item"><span>Wireframing & Prototyping</span> <span class="skill-level">Advanced</span></div>
+                        <div class="skill-item"><span>Branding & Identity</span> <span class="skill-level">Intermediate</span></div>
+                        <div class="skill-item"><span>Motion Graphics</span> <span class="skill-level">Intermediate</span></div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">✦ Frontend Skills 🔥</div>
+                    <div class="skill-group">
+                        <div class="skill-item"><span>HTML</span> <span class="skill-level">Basic–Int.</span></div>
+                        <div class="skill-item"><span>CSS</span> <span class="skill-level">Intermediate</span></div>
+                        <div class="skill-item"><span>Bootstrap (Responsive)</span> <span class="skill-level">Intermediate</span></div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">✦ Digital Marketing</div>
+                    <div class="skill-group">
+                        <div class="skill-item"><span>Meta Ads (FB/IG)</span></div>
+                        <div class="skill-item"><span>Google Ads (Search & Display)</span></div>
+                        <div class="skill-item"><span>SEO (On-page & Keyword)</span></div>
+                        <div class="skill-item"><span>Conversion Optimization</span></div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">✦ Tools</div>
+                    <div class="tools-tags">
+                        <span class="tool-tag">Figma</span>
+                        <span class="tool-tag">Adobe XD</span>
+                        <span class="tool-tag">Photoshop</span>
+                        <span class="tool-tag">Illustrator</span>
+                        <span class="tool-tag">After Effects</span>
+                        <span class="tool-tag">Premiere Pro</span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">✦ Additional</div>
+                    <p class="mini-text"><strong>Languages:</strong> Bangla (Native), English (Fluent)</p>
+                    <p class="mini-text"><strong>Interests:</strong> Design, Business, Technology, Marketing</p>
+                </div>
+
+            </div>
+
+            <div class="right-col">
+                
+                <div class="section">
+                    <div class="section-title">✦ Experience</div>
+                    
+                    <div class="experience-item">
+                        <h3>UI/UX Designer <span>2023 – Present</span></h3>
+                        <div class="company">Integrated Business Systems & Solutions Pvt. Ltd.</div>
+                        <ul>
+                            <li>Designed intuitive UI for complex web and mobile applications.</li>
+                            <li>Built and maintained scalable design systems to ensure consistency.</li>
+                            <li>Improved overall UX, usability, and accessibility for end-users.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <h3>Junior Graphic Designer <span>2022 – 2023</span></h3>
+                        <div class="company">iCircles USA Bangladesh Limited</div>
+                        <ul>
+                            <li>Designed impactful branding materials and marketing creatives.</li>
+                            <li>Supported digital campaigns with high-quality visual assets.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">✦ Selected Projects</div>
+                    
+                    <div class="experience-item" style="border-left-color: var(--secondary);">
+                        <h3>VPN App <span class="highlight-badge">1M+ Users on Google Play</span></h3>
+                        <ul>
+                            <li>Designed comprehensive UI/UX for a high-traffic real-world application, ensuring smooth navigation for a massive user base.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item" style="border-left-color: var(--secondary);">
+                        <h3>Study Abroad App Design System</h3>
+                        <ul>
+                            <li>Designed a multi-platform UI system prioritizing responsive layouts and seamless cross-device experiences.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item" style="border-left-color: var(--secondary);">
+                        <h3>Compro Health (Canada Medical Project)</h3>
+                        <ul>
+                            <li>Developed secure, user-centric UI/UX solutions tailored for a robust healthcare platform.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">✦ Personal Brand</div>
+                    <div class="experience-item" style="border-left-color: var(--accent);">
+                        <h3>Founder & Designer <span class="highlight-badge">Licensed Brand Ownership</span></h3>
+                        <div class="company">Juptee (E-commerce Brand)</div>
+                        <ul>
+                            <li>Built and managed an apparel brand from the ground up.</li>
+                            <li>Designed custom products and established the core brand identity.</li>
+                            <li>Ran successful marketing campaigns utilizing Meta Ads & Google Ads.</li>
+                            <li>Applied technical SEO and keyword research strategies to drive traffic.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">✦ Education</div>
+                    <div class="education-item">
+                        <h3>Higher Secondary Certificate (HSC)</h3>
+                        <p>Govt. Kaligonj Sramik College | 2023</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
